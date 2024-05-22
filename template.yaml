@@ -11,7 +11,7 @@ metadata:
 parameters:
   - name: SOURCE_IMAGE_URL
     description: die url wo zu meinem docker image führt
-    value: ghcr.io/schwanenseee/petclinic-app:v2
+    value: ghcr.io/schwanenseee/petclinic-app:v3
     required: true
 
   - name: DATABASE_NAME
