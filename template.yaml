@@ -1,9 +1,9 @@
 kind: Template
 apiVersion: template.openshift.io/v1
 metadata:
-  name: petclinic-ds-test4
+  name: petclinicdstest5
   annotations:
-    openshift.io/display-name: "Petclinic beispiel"
+    openshift.io/display-name: "Petclinic beispiel aufgabe 6-2 test 5"
     description: "ein einfaches petclinic beispiel"
     iconClass: "icon-play"
     tags: "java"
@@ -16,17 +16,17 @@ parameters:
 
   - name: DATABASE_NAME
     description: name der petclinic database
-    value: petclinic-ds-test4
+    value: petclinicdstest5
     required: true
 
   - name: DATABASE_USER
     description: The user for the MySQL Database
-    value: petclinic-ds-test4
+    value: petclinicdstest5
     required: true
 
   - name: DATABASE_PASSWORD
     description: The password for the MySQL Database
-    value: petclinic-ds-test4
+    value: petclinicdstest5
     required: true
 
 objects:
@@ -36,7 +36,7 @@ objects:
       name: petclinic-mysql
       labels:
         app: petclinic-mysql
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
       finalizers:
         - kubernetes.io/pvc-protection  
     spec:
@@ -54,7 +54,7 @@ objects:
       name: petclinic-mysql
       labels:
         app: petclinic-mysql
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
       annotations:
         template.openshift.io/expose-username: "{.data['database-user']}"
         template.openshift.io/expose-password: "{.data['database-password']}"
@@ -72,7 +72,7 @@ objects:
       name: petclinic-mysql
       labels:
         app: petclinic-mysql
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       strategy:
         type: Recreate
@@ -159,7 +159,7 @@ objects:
       name: petclinic-app
       labels:
         app: petclinic-app
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       replicas: 1
       selector:
@@ -206,7 +206,7 @@ objects:
       name: petclinic-phpmyadmin
       labels:
         app: petclinic-phpmyadmin
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       replicas: 1
       selector:
@@ -261,7 +261,7 @@ objects:
       name: petclinic-mysql
       labels:
         app: petclinic-mysql
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       ports:
         - name: petclinic-mysql
@@ -281,7 +281,7 @@ objects:
       name: petclinic-app
       labels:
         app: petclinic-app
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       ports:
         - name: 8080-tcp
@@ -305,7 +305,7 @@ objects:
       name: petclinic-phpmyadmin
       labels:
         app: petclinic-phpmyadmin
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       ports:
         - name: 8080-tcp
@@ -329,7 +329,7 @@ objects:
       name: petclinic-app
       labels:
         app: petclinic-app
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       to:
         kind: Service
@@ -347,7 +347,7 @@ objects:
       name: petclinic-phpmyadmin
       labels:
         app: petclinic-phpmyadmin
-        app.kubernetes.io/part-of: petclinic-ds-test4
+        app.kubernetes.io/part-of: petclinicdstest5
     spec:
       to:
         kind: Service
